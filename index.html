@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>simple button generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <h1>simple button generator</h1> 
+        <div class="screen">
+            <div id="rectangle" class="rectangle">
+                <button id="button">button</button>
+            </div>
+            <div id="out" class="out">
+                <div id="horizontal-padding"></div>
+                <div id="vertical-padding"></div>
+                <div id="font-size"></div>
+                <div id="border-radius"></div>
+                <div id="color"></div>
+                <div id="bg-color"></div>
+            </div>
+        </div>
+        <div class="item">
+            <form oninput="level.value = hp.valueAsNumber">
+                <label for="hp">horizontal padding:</label>
+                <input id="hp" type="range" min="0" max="100" value="0">
+                <output for="hp" name="level">0</output>/100
+            </form>
+            <form oninput="level.value = vp.valueAsNumber">
+                <label for="vp">vertical padding:</label>
+                <input id="vp" type="range" min="0" max="50" value="0">
+                <output for="vp" name="level">0</output>/100
+            </form>
+        </div>
+        <div class="item">
+            <form oninput="level.value = fs.valueAsNumber">
+                <label for="fs">font size:</label>
+                <input id="fs" type="range" min="0" max="100" value="0">
+                <output for="fs" name="level">0</output>/100
+            </form>
+            <form oninput="level.value = br.valueAsNumber">
+                <label for="br">border radius</label>
+                <input id="br" type="range" min="0" max="100" value="0">
+                <output for="br" name="level">0</output>/100
+            </form>
+        </div>
+        <div class="item">
+            <form oninput="level.value = c.valueAsNumber">
+                <label for="c">text color:</label>
+                <input id="c" class="jscolor {onFineChange:'colorText(this)'}" value="fff">
+            </form>
+            <form oninput="level.value = bg-color.valueAsNumber">
+                <label for="bg-c">background color:</label>
+                <input id="bg-c" class="jscolor {onFineChange:'colorBG(this)'}" value="fd7c6e">
+            </form>
+        </div>
+    </div>
+
+    <script src="js/jscolor/jscolor.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
